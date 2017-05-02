@@ -1,4 +1,4 @@
-package com.zwgg.touch.toucheventdemo;
+package com.zwgg.touch;
 
 import org.junit.Test;
 
