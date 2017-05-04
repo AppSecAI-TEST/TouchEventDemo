@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 /**
  * Class: ControllerView
@@ -12,7 +13,11 @@ import android.view.ViewGroup;
  * Time: 10:07
  */
 
-public class ControllerView extends ViewGroup {
+public class ControllerView extends RelativeLayout {
+
+    private boolean isIntercept = false;
+    private boolean isRequestDisallowIntercept = false;
+    private boolean mTouchResult = false;
 
     public ControllerView(Context context) {
         super(context);
@@ -33,17 +38,11 @@ public class ControllerView extends ViewGroup {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        return super.onInterceptTouchEvent(ev);
+        return isIntercept;
     }
 
     @Override
-    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
     }
-
-    @Override
-    public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-        super.requestDisallowInterceptTouchEvent(disallowIntercept);
-    }
-
-
 }
